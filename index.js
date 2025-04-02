@@ -29,6 +29,11 @@ app.use(cookieParser());
 // handle routes
 routes(app);
 
+// ping server
+app.head('/ping', (req, res) => {
+  res.sendStatus(200);
+});
+
 // handle error
 app.use(errorHandling);
 
