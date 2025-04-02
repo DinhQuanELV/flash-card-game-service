@@ -20,7 +20,7 @@ app.use(
   cors({
     origin: process.env.BASE_URL || 'http://localhost:3000', // port fe
     credentials: true, // allow call api
-  })
+  }),
 );
 app.use(express.json());
 app.use(morgan('dev'));
@@ -28,6 +28,10 @@ app.use(cookieParser());
 
 // handle routes
 routes(app);
+
+app.get('/ping', (req, res) => {
+  res.send('server is alive!');
+});
 
 // handle error
 app.use(errorHandling);
