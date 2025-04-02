@@ -29,10 +29,6 @@ app.use(cookieParser());
 // handle routes
 routes(app);
 
-app.get('/ping', (req, res) => {
-  res.send('server is alive!');
-});
-
 // handle error
 app.use(errorHandling);
 
